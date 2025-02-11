@@ -1,4 +1,4 @@
-# Lost Luggage
+# 🧳 Lost Luggage
 
 An interactive choose-your-own adventure text game to play in the terminal.
 
