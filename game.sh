@@ -28,9 +28,32 @@ Armed with lost luggage claim tickets and a relentless determination, you must e
 
 Your adventure begins now. Will you track down the ring, or will it be lost forever in the sea of unclaimed baggage?\n\n"
 
-    read -p "Press enter to begin your quest"
+    read -n 1 -s -r -p "Press any key to begin"
 }
 
+function victory() {
+    clear
+
+    echo -e "After a whirlwind journey across multiple cities, following cryptic baggage claim tickets and chasing down lost luggage, you finally unzip a suitcase and there it is—your precious ring, gleaming under the dim airport storage lights.
+
+Relief washes over you. The long flights, the confusing city streets, the countless misplaced suitcases—it was all worth it. The moment you’ve been working toward is finally within reach.
+
+Now, all that’s left is to return home, knowing that soon, you’ll be down on one knee, holding out this very ring, and asking the most important question of your life.
+
+* Cities Visited: ${visited[@]}
+* Luggage Found: ${found[@]}
+
+Some journeys are about the destination, but this one was about the adventure.
+
+Thank you for playing The Lost Luggage Adventure!
+
+
+
+\n\n"
+
+    read -n 1 -s -r -p "Press any key to end"
+    clear
+}
 
 function init() {
     player["name"]="Traveller"
@@ -61,62 +84,46 @@ function init() {
 
 function search() {
     city="$1"
-    echo -e "\nSearching for lost luggage in $city..."
+    echo -en "\nSearching for lost luggage in $city... "
     if [[ -v lost_luggage["$city"] ]]; then
-        echo -e "\nFOUND ${lost_luggage[$city]}!\n"
+        echo -e "you FOUND your ${lost_luggage[$city]}!\n"
         found+=("${lost_luggage["${city}"]}")
         if [[ "${lost_luggage["${city}"]}" == "Ring" ]]; then
             player["found_ring"]=true
         fi
+
+        # The player has found the luggage, so remove it from lost_luggage
+        unset lost_luggage["$city"]
     else
-        echo -e "Nothing found in $city\n"
+        echo -e "nothing found\n"
     fi
-    read -p "Press enter to begin your quest"
+
+    read -n 1 -s -r -p "Press any key to continue"
 }
 
 function travel() {
     echo -e "\nWhere would you like to go next?"
-    available_cities=()
-    temp=()
-    for city in "${cities[@]}"; do
-        echo "Have you previously visited ${city}?"
-        previously_visited=false
-        for visited_city in "${visited[@]}"; do
-            if [[ "$city" == "$visited_city" ]]; then
-                echo "Previously Visited ${city}"
-                previously_visited=true
-            fi
-        done
-        if [[ previously_visited == true ]]; then
-            echo "You have already been to ${city}"
-        else
-            echo "You haven't been to ${city} yet"
-            available_cities+=("${city}")
-        fi
-    done
+    shuffled_city_indexes=($(shuf -e "${!cities[@]}"))
+    available_cities=cities
 
-    if [ ${#available_cities[@]} -eq 0 ]; then
-        echo "You've already visited all cities."
-        return
-    fi
-
-    for i in "${!available_cities[@]}"; do
-        echo "$((i+1)). ${available_cities[$i]}"
+    for i in "${!cities[@]}"; do
+        echo "$((i+1)). ${cities[$i]}"
     done
 
     echo -n "Choose a city by number: "
     read city_choice
-    destination="${available_cities[$((city_choice-1))]}"
+    destination="${cities[$((city_choice-1))]}"
     visited+=("${destination}")
     player["city"]="${destination}"
     echo -e "\nTravelling to ${destination}..."
+    read -n 1 -s -r -p "Press any key to continue"
 }
 
 function play() {
     while [ "${player["found_ring"]}" == false ]; do
         city="${player["city"]}"
 
-        # echo -e "You have visited: ${visited[@]}"
+        echo -e "You have visited: ${visited[@]}"
    
         clear
         # echo -e "${city_descriptions[$city]}\n"
@@ -145,12 +152,6 @@ You are on a quest to find the lost ring! Choose an action:
                 ;;
         esac
 
-        if [ "${player["found_ring"]}" == true ]; then
-            echo -e "\nCongratulations! You have found the ring!"
-            echo -e "Your journey has ended successfully.\n"
-            break
-        fi
-
         if [ "${player["quit"]}" == true ]; then
             echo -e "Your journey has ended.\n"
             break
@@ -165,3 +166,7 @@ You are on a quest to find the lost ring! Choose an action:
 init
 intro
 play
+
+if [ "${player["found_ring"]}" == true ]; then
+    victory
+fi
