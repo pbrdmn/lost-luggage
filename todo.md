@@ -15,6 +15,6 @@
 [ ] When the player arrives in a city, show whether the player has already found the luggage or ask if they whould like to search for the lost luggage in the city
 [ ] Build a small maze of streets for the player to search for lost luggage within a city
 [x] Allow the player to collect items after finding a piece of lost luggage
-[ ] Prevent the player from finding the same piece of lost luggage twice
+[x] Prevent the player from finding the same piece of lost luggage twice
 [x] End the game when the player collects the ring
 [ ] Display the player's total travel time and cost
