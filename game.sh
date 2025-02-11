@@ -28,7 +28,7 @@ Armed with lost luggage claim tickets and a relentless determination, you must e
 
 Your adventure begins now. Will you track down the ring, or will it be lost forever in the sea of unclaimed baggage?\n\n"
 
-    read -n 1 -s -r -p "Press any key to begin"
+    read -p "Press enter to begin"
 }
 
 function victory() {
@@ -40,18 +40,20 @@ Relief washes over you. The long flights, the confusing city streets, the countl
 
 Now, all that’s left is to return home, knowing that soon, you’ll be down on one knee, holding out this very ring, and asking the most important question of your life.
 
+"
+
+}
+
+function summary() {
+echo -e "
 * Cities Visited: ${visited[@]}
 * Luggage Found: ${found[@]}
 
 Some journeys are about the destination, but this one was about the adventure.
 
 Thank you for playing The Lost Luggage Adventure!
-
-
-
-\n\n"
-
-    read -n 1 -s -r -p "Press any key to end"
+"
+    read -p "Press enter to end"
     clear
 }
 
@@ -166,7 +168,7 @@ You are on a quest to find the lost ring! Choose an action:
 init
 intro
 play
-
 if [ "${player["found_ring"]}" == true ]; then
     victory
 fi
+summary
