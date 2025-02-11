@@ -45,9 +45,18 @@ Now, all that’s left is to return home, knowing that soon, you’ll be down on
 }
 
 function summary() {
+    echo -e "\n* ${#visited[@]} Cities Visited:"
+    for key in "${!visited[@]}"; do
+        echo " -> ${visited[$key]}"
+    done
+
+    echo -e "\n* Luggage Found:"
+    for key in "${!found[@]}"; do
+        echo " -> ${found[$key]}"
+    done
+
+
 echo -e "
-* Cities Visited: ${visited[@]}
-* Luggage Found: ${found[@]}
 
 Some journeys are about the destination, but this one was about the adventure.
 
