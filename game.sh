@@ -18,7 +18,13 @@ The flights were booked, the hotel reservations confirmed, and most importantly�
 
 But somewhere along the way—between connecting flights, airport chaos, and a rushed baggage check—the ring vanished. Lost. Misplaced in the labyrinth of airport luggage systems, shuffled between terminals, and now, who knows where?
 
-Armed with lost luggage claim tickets and a relentless determination, you must embark on a journey across multiple cities, following the trail of misplaced bags in hopes of recovering your precious ring. Along the way, you might recover your other lost luggage.
+Armed with lost luggage claim tickets and a relentless determination, you must embark on a journey across multiple cities, following the trail of misplaced bags in hopes of recovering your precious ring. Along the way, you might recover your other lost luggage.\n\n"
+
+    echo -n "Enter your name: "
+    read player_name
+    player["name"]=$player_name
+
+    echo -e "\nWelcome ${player["name"]}.
 
 Your adventure begins now. Will you track down the ring, or will it be lost forever in the sea of unclaimed baggage?\n\n"
 
@@ -27,11 +33,12 @@ Your adventure begins now. Will you track down the ring, or will it be lost fore
 
 
 function init() {
-    player["found_ring"]=false
-    player["quit"]=false
+    player["name"]="Traveller"
     player["duration"]=0
     player["cost"]=0
     player["city"]="${cities[0]}"
+    player["found_ring"]=false
+    player["quit"]=false
 
 
     # Randomise the location of each piece of lost luggage
