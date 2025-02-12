@@ -45,14 +45,16 @@ Now, all that’s left is to return home, knowing that soon, you’ll be down on
 }
 
 function summary() {
-    echo -e "\n* ${#visited[@]} Cities Visited:"
+    echo -e "\n * \$${player["cost"]} spent on flights"
+    echo -e "\n * ${player["duration"]} hours spent travelling"
+    echo -e "\n * ${#visited[@]} Cities Visited:"
     for key in "${!visited[@]}"; do
-        echo " -> ${visited[$key]}"
+        echo "   -> ${visited[$key]}"
     done
 
-    echo -e "\n* Luggage Found:"
+    echo -e "\n * Luggage Found:"
     for key in "${!found[@]}"; do
-        echo " -> ${found[$key]}"
+        echo "   -> ${found[$key]}"
     done
 
 
@@ -113,24 +115,36 @@ function search() {
 }
 
 function travel() {
+    city="$1"
     N=5
     flights=()
+    costs=()
+    durations=()
+
     echo -e "\nWhere would you like to go next?"
+    echo -e "\nAvailable flights from ${city}:"
     shuffled_city_indexes=($(shuf -e "${!cities[@]}"))
     for index in $(shuf --input-range=0-$(( ${#cities[*]} - 1 )) -n ${N}); do
         flights+=("${cities[$index]}")
+        costs+=("100")
+        durations+=("5")
     done
 
     for i in "${!flights[@]}"; do
-        echo "$((i+1)). ${flights[$i]}"
+        echo "$((i+1)). ${flights[$i]}. \$${costs[$i]}. ${durations[$i]}h"
     done
 
     echo -n "Choose a city by number: "
     read city_choice
-    destination="${flights[$((city_choice-1))]}"
+    selection=$((city_choice-1))
 
+    destination="${flights[$selection]}"
     visited+=("${destination}")
+
+    player["cost"]=$((player["cost"] + costs[$selection]))
+    player["duration"]=$((player["duration"] + durations[$selection]))
     player["city"]="${destination}"
+
     echo -e "\nTravelling to ${destination}..."
     read -n 1 -s -r -p "Press any key to continue"
 }
@@ -158,7 +172,7 @@ You are on a quest to find the lost ring! Choose an action:
                 search "$city"
                 ;;
             2)  # Travel to another city
-                travel
+                travel "$city"
                 ;;
             3)  # Abandon the quest
                 player["quit"]=true
