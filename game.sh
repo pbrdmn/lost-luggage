@@ -1,15 +1,17 @@
 #!/bin/bash
 
 luggage=("Ring" "Watch" "Travel Guide" "Travel Pillow" "Toothbrush" "Sunscreen" "Headphones" "Power Bank" "Hat" "Laptop")
-cities=("Sydney, Australia" "Tokyo, Japan" "Rome, Italy" "Paris, France" "New York, USA" "Dubai, UAE" "London, England" "Wellington, New Zealand" "Berlin, Germany" "Oslo, Norway" "Mexico City, Mexico" "Amsterdam, Netherlands" "Kathmandu, Nepal" "Cairo, Egypt" "Madrid, Spain")
 
 declare -A lost_luggage
 declare -A player
-declare -a visited=("${cities[0]}")
+declare -a visited=()
 declare -a found=()
+declare -a cities=()
+declare -A countries=()
+declare -A descriptions=()
 
 function intro() {
-    clear
+    #clear
     echo -e "Welcome to the Lost Luggage Adventure Game!
 
 You had everything planned perfectly.
@@ -27,11 +29,11 @@ Armed with lost luggage claim tickets and a relentless determination, you must e
 
 Your adventure begins now. Will you track down the ring, or will it be lost forever in the sea of unclaimed baggage?\n\n"
 
-    read -p "Press enter to begin"
+    #read -p "Press enter to begin"
 }
 
 function victory() {
-    clear
+    #clear
 
     echo -e "After a whirlwind journey across multiple cities, following cryptic baggage claim tickets and chasing down lost luggage, you finally unzip a suitcase and there it is—your precious ring, gleaming under the dim airport storage lights.
 
@@ -45,8 +47,8 @@ Now, all that’s left is to return home, knowing that soon, you’ll be down on
 
 function summary() {
     echo -e "\n * \$${player["cost"]} spent on flights"
-    echo -e "\n * ${player["duration"]} hours spent travelling"
-    echo -e "\n * ${#visited[@]} Cities Visited:"
+    echo -e " * ${player["duration"]} hours spent travelling"
+    echo -e " * ${#visited[@]} Cities Visited:"
     for key in "${!visited[@]}"; do
         echo "   -> ${visited[$key]}"
     done
@@ -56,7 +58,7 @@ function summary() {
         echo "   -> ${found[$key]}"
     done
 
-    read -p "Press enter to continue..."
+    #read -p "Press enter to continue..."
 }
 
 function farewell() {
@@ -71,10 +73,14 @@ function init() {
     player["name"]="Traveller"
     player["duration"]=0
     player["cost"]=0
-    player["city"]="${cities[0]}"
+    player["city"]=""
     player["found_ring"]=false
     player["quit"]=false
 
+    # Load cities from data file
+    load_cities
+    player["city"]="${cities[0]}"
+    visited+=("${cities[0]}")
 
     # Randomise the location of each piece of lost luggage
     shuffled_city_indexes=($(shuf -e "${!cities[@]}"))
@@ -86,20 +92,28 @@ function init() {
             break
         fi
     done
+}
 
-#   Debug luggage shuffle
-#   echo -e "\nLOST_LUGGAGE"
-#   for key in "${!lost_luggage[@]}"; do
-#       echo "$key -> ${lost_luggage[$key]}"
-#   done
+function load_cities() {
+    # Load flights from data/cities.csv
+    csv_file="data/cities.csv"
+
+    while IFS="," read -r city country description
+    do
+        cities+=("${city}")
+        countries["${city}"]="${country}"
+        descriptions["${city}"]="${description}"
+        echo "Loading: ${city}, ${country} - ${description}"
+    done < "$csv_file"
 }
 
 function search() {
     city="$1"
-    echo -en "\nSearching for lost luggage in $city... "
+    echo -e "\nYou search for lost luggage in $city... "
     if [[ -v lost_luggage["$city"] ]]; then
-        echo -e "you FOUND your ${lost_luggage[$city]}!\n"
+        echo -e "And you found your ${lost_luggage[$city]}!\n"
         found+=("${lost_luggage["${city}"]}")
+
         if [[ "${lost_luggage["${city}"]}" == "Ring" ]]; then
             player["found_ring"]=true
         fi
@@ -107,10 +121,8 @@ function search() {
         # The player has found the luggage, so remove it from lost_luggage
         unset lost_luggage["$city"]
     else
-        echo -e "nothing found\n"
+        echo -e "But you found nothing\n"
     fi
-
-    read -p "Press enter to continue"
 }
 
 function travel() {
@@ -120,14 +132,31 @@ function travel() {
     costs=()
     durations=()
 
-    echo -e "\nWhere would you like to go next?"
-    echo -e "\nAvailable flights from ${city}:"
-    shuffled_city_indexes=($(shuf -e "${!cities[@]}"))
-    for index in $(shuf --input-range=0-$(( ${#cities[*]} - 1 )) -n ${N}); do
-        flights+=("${cities[$index]}")
-        costs+=("100")
-        durations+=("5")
-    done
+    # Load flights from data/flights.csv
+    declare -a flight_data
+    csv_file="data/flights.csv"
+
+    while IFS=, read -r origin destination duration cost
+    do
+        # Skip Header
+        if [ "$origin" == "${city}" ]; then
+            flight_data+=("$origin,$destination,$duration,$cost")
+            flights+=("${destination}")
+            costs+=("${cost}")
+            durations+=("${duration}")
+        fi
+    done < "$csv_file"
+
+
+
+#    echo -e "\nWhere would you like to go next?"
+#    echo -e "\nAvailable flights from ${city}:"
+#    shuffled_city_indexes=($(shuf -e "${!cities[@]}"))
+#    for index in $(shuf --input-range=0-$(( ${#cities[*]} - 1 )) -n ${N}); do
+#        flights+=("${cities[$index]}")
+#        costs+=("100")
+#        durations+=("5")
+#    done
 
     for i in "${!flights[@]}"; do
         echo "$((i+1)). ${flights[$i]}. \$${costs[$i]}. ${durations[$i]}h"
@@ -136,6 +165,7 @@ function travel() {
     echo -n "Choose a city by number: "
     read city_choice
     selection=$((city_choice-1))
+    # Validate selection?
 
     destination="${flights[$selection]}"
     visited+=("${destination}")
@@ -144,25 +174,26 @@ function travel() {
     player["duration"]=$((player["duration"] + durations[$selection]))
     player["city"]="${destination}"
 
-    echo -e "\nTravelling to ${destination}...\nThank you for visiting ${city}."
-    read -p "Press enter to continue..."
+    echo -e "\nBoarding flight from ${city} to ${destination}...\n"
+    #read -p "Press enter to continue..."
 }
 
 function play() {
     while [ "${player["found_ring"]}" == false ]; do
         city="${player["city"]}"
 
-        echo -e "You have visited: ${visited[@]}"
-   
-        clear
+        #clear
         # echo -e "${city_descriptions[$city]}\n"
-        echo -e "Welcome to $city!
+        echo -e "Welcome to $city!"
 
-You are on a quest to find the lost ring! Choose an action:
-  1. Search for lost luggage
-  2. Travel to another city
-  3. View your progress
-  q. Abandon your quest"
+        # Auto-search
+        search "${city}"
+
+        echo -e "Choose an action:"
+        echo -e "  1. Search for lost luggage"
+        echo -e "  2. Travel to another city"
+        echo -e "  3. View your progress"
+        echo -e "  q. Abandon your quest"
 
         echo -n "What will you do? (1, 2, 3, or q): "
         read action

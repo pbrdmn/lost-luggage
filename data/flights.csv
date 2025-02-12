@@ -1,601 +1,598 @@
-AMS,ATL,10,642.16
-AMS,BKK,11,798.62
-AMS,CDG,11,724.97
-AMS,CGK,10,388.31
-AMS,DEL,11,506.48
-AMS,DXB,8,295.38
-AMS,FCO,13,533.47
-AMS,FRA,10,1008.55
-AMS,HKG,11,476.51
-AMS,HND,8,471.57
-AMS,ICN,14,898.48
-AMS,IST,9,1048.42
-AMS,JFK,11,817.19
-AMS,KUL,15,1311.63
-AMS,LAX,8,818.08
-AMS,LHR,8,1153.29
-AMS,MAD,9,782.53
-AMS,MEX,15,906.33
-AMS,MUC,6,324.49
-AMS,PEK,7,613.84
-AMS,PVG,8,424.29
-AMS,SFO,11,503.34
-AMS,SIN,6,770.61
-AMS,SYD,13,1001.23
-ATL,AMS,15,1014.58
-ATL,BKK,6,1227.51
-ATL,CDG,13,1109.68
-ATL,CGK,9,746.86
-ATL,DEL,15,342.16
-ATL,DXB,8,925.65
-ATL,FCO,7,804.11
-ATL,FRA,9,287.13
-ATL,HKG,15,1279.72
-ATL,HND,8,687.97
-ATL,ICN,14,1048.46
-ATL,IST,7,632.29
-ATL,JFK,11,790.74
-ATL,KUL,6,1480.67
-ATL,LAX,9,1488.55
-ATL,LHR,11,946.22
-ATL,MAD,10,355.88
-ATL,MEX,15,1493.1
-ATL,MUC,8,941.43
-ATL,PEK,7,461.14
-ATL,PVG,11,1033.98
-ATL,SFO,15,1093.28
-ATL,SIN,12,555.52
-ATL,SYD,11,234.52
-BKK,AMS,8,1115.02
-BKK,ATL,6,311.34
-BKK,CDG,11,1410.08
-BKK,CGK,13,1048.73
-BKK,DEL,8,305.5
-BKK,DXB,9,1050.19
-BKK,FCO,6,555.3
-BKK,FRA,13,1217.27
-BKK,HKG,8,1116.35
-BKK,HND,8,1467.1
-BKK,ICN,10,812.06
-BKK,IST,14,897.66
-BKK,JFK,9,991.92
-BKK,KUL,12,224.38
-BKK,LAX,10,361.72
-BKK,LHR,15,966.59
-BKK,MAD,8,1099.12
-BKK,MEX,14,1025.98
-BKK,MUC,15,833.38
-BKK,PEK,14,805.26
-BKK,PVG,12,1210.06
-BKK,SFO,10,993.31
-BKK,SIN,14,951.66
-BKK,SYD,11,1433.77
-CDG,AMS,10,244.03
-CDG,ATL,13,1248.87
-CDG,BKK,13,811.2
-CDG,CGK,9,1370.81
-CDG,DEL,6,1465.52
-CDG,DXB,8,1102.07
-CDG,FCO,12,962.69
-CDG,FRA,15,380.09
-CDG,HKG,8,423.78
-CDG,HND,9,694.4
-CDG,ICN,13,1245.26
-CDG,IST,13,1302.89
-CDG,JFK,7,329.79
-CDG,KUL,13,287.21
-CDG,LAX,13,688.3
-CDG,LHR,15,264.36
-CDG,MAD,8,534.76
-CDG,MEX,12,1486.92
-CDG,MUC,7,688.41
-CDG,PEK,10,518.47
-CDG,PVG,11,1087.05
-CDG,SFO,7,941.86
-CDG,SIN,6,468.01
-CDG,SYD,15,212.66
-CGK,AMS,13,716.11
-CGK,ATL,15,928.15
-CGK,BKK,13,405.97
-CGK,CDG,11,664.75
-CGK,DEL,15,848.77
-CGK,DXB,8,600.13
-CGK,FCO,13,221.73
-CGK,FRA,15,897.08
-CGK,HKG,9,603.87
-CGK,HND,8,1047.51
-CGK,ICN,9,1325.18
-CGK,IST,7,1492.9
-CGK,JFK,11,915.6
-CGK,KUL,15,611.96
-CGK,LAX,7,1310.47
-CGK,LHR,13,1328.87
-CGK,MAD,9,646.19
-CGK,MEX,6,905.47
-CGK,MUC,9,382.07
-CGK,PEK,6,1323.96
-CGK,PVG,15,563.26
-CGK,SFO,14,1430.47
-CGK,SIN,15,277.14
-CGK,SYD,13,212.87
-DEL,AMS,9,200.27
-DEL,ATL,12,935.86
-DEL,BKK,14,357.26
-DEL,CDG,9,568.64
-DEL,CGK,11,1351.72
-DEL,DXB,10,955.7
-DEL,FCO,14,243.38
-DEL,FRA,8,1092.76
-DEL,HKG,7,593.71
-DEL,HND,9,825.55
-DEL,ICN,15,273.39
-DEL,IST,9,730.19
-DEL,JFK,9,1130.26
-DEL,KUL,13,962.65
-DEL,LAX,11,571.11
-DEL,LHR,14,537.46
-DEL,MAD,11,644.03
-DEL,MEX,11,705.09
-DEL,MUC,15,860.64
-DEL,PEK,15,295.68
-DEL,PVG,9,480.11
-DEL,SFO,9,1119.27
-DEL,SIN,15,749.34
-DEL,SYD,13,885.48
-DXB,AMS,11,655.76
-DXB,ATL,8,485.69
-DXB,BKK,7,324.91
-DXB,CDG,7,1079.3
-DXB,CGK,15,698.05
-DXB,DEL,7,638.77
-DXB,FCO,11,538.12
-DXB,FRA,15,1470.55
-DXB,HKG,9,824.7
-DXB,HND,11,1284.5
-DXB,ICN,8,1274.69
-DXB,IST,11,1048.27
-DXB,JFK,15,1427.6
-DXB,KUL,6,1086.34
-DXB,LAX,12,662.7
-DXB,LHR,6,347.63
-DXB,MAD,14,818.89
-DXB,MEX,9,1110.02
-DXB,MUC,13,685.06
-DXB,PEK,12,287.45
-DXB,PVG,13,398.8
-DXB,SFO,10,653.6
-DXB,SIN,6,1499.9
-DXB,SYD,8,1250.61
-FCO,AMS,7,982.7
-FCO,ATL,6,1338.7
-FCO,BKK,14,1342.8
-FCO,CDG,6,549.26
-FCO,CGK,9,769.83
-FCO,DEL,6,1490.01
-FCO,DXB,12,1096.17
-FCO,FRA,8,334.8
-FCO,HKG,6,944.63
-FCO,HND,14,715.96
-FCO,ICN,10,1101.89
-FCO,IST,10,620.94
-FCO,JFK,15,758.24
-FCO,KUL,7,1302.41
-FCO,LAX,8,251.84
-FCO,LHR,12,455.16
-FCO,MAD,13,1152.71
-FCO,MEX,7,1348.45
-FCO,MUC,12,1463.15
-FCO,PEK,13,781.5
-FCO,PVG,8,296.69
-FCO,SFO,8,339.6
-FCO,SIN,15,703.53
-FCO,SYD,7,296.16
-FRA,AMS,7,917.7
-FRA,ATL,11,1430.88
-FRA,BKK,7,495.86
-FRA,CDG,12,521.73
-FRA,CGK,12,1328.19
-FRA,DEL,13,1421.22
-FRA,DXB,11,1413.3
-FRA,FCO,8,1352.01
-FRA,HKG,7,1399.54
-FRA,HND,7,983.21
-FRA,ICN,7,340.47
-FRA,IST,10,882.74
-FRA,JFK,11,207.89
-FRA,KUL,9,354.85
-FRA,LAX,7,1383.1
-FRA,LHR,14,858.0
-FRA,MAD,13,1165.72
-FRA,MEX,13,703.82
-FRA,MUC,10,1427.03
-FRA,PEK,8,730.8
-FRA,PVG,9,1285.6
-FRA,SFO,10,626.16
-FRA,SIN,13,1207.18
-FRA,SYD,8,755.76
-FROM,TO,TIME,COST
-HKG,AMS,12,1063.08
-HKG,ATL,7,1419.64
-HKG,BKK,15,1103.7
-HKG,CDG,11,209.98
-HKG,CGK,8,1407.85
-HKG,DEL,14,1126.48
-HKG,DXB,7,960.74
-HKG,FCO,12,1252.36
-HKG,FRA,14,457.23
-HKG,HND,12,362.78
-HKG,ICN,9,703.99
-HKG,IST,10,1321.23
-HKG,JFK,13,1316.34
-HKG,KUL,10,1033.66
-HKG,LAX,8,652.35
-HKG,LHR,11,903.46
-HKG,MAD,15,618.19
-HKG,MEX,10,234.69
-HKG,MUC,12,392.35
-HKG,PEK,10,1220.86
-HKG,PVG,14,408.76
-HKG,SFO,9,1223.53
-HKG,SIN,6,222.9
-HKG,SYD,12,220.89
-HND,AMS,10,875.94
-HND,ATL,11,592.37
-HND,BKK,6,941.4
-HND,CDG,12,1204.2
-HND,CGK,7,1248.33
-HND,DEL,7,334.9
-HND,DXB,12,1341.33
-HND,FCO,14,780.03
-HND,FRA,15,1291.37
-HND,HKG,8,1283.19
-HND,ICN,6,628.61
-HND,IST,15,737.63
-HND,JFK,14,1455.05
-HND,KUL,9,721.72
-HND,LAX,10,897.76
-HND,LHR,14,922.05
-HND,MAD,13,999.74
-HND,MEX,8,1069.93
-HND,MUC,6,1334.7
-HND,PEK,14,1196.11
-HND,PVG,13,962.74
-HND,SFO,15,569.63
-HND,SIN,6,986.35
-HND,SYD,11,555.63
-ICN,AMS,7,1458.03
-ICN,ATL,11,1469.53
-ICN,BKK,7,876.67
-ICN,CDG,8,347.52
-ICN,CGK,11,505.58
-ICN,DEL,7,368.37
-ICN,DXB,9,601.52
-ICN,FCO,10,363.01
-ICN,FRA,7,410.29
-ICN,HKG,12,539.57
-ICN,HND,9,955.13
-ICN,IST,15,1030.89
-ICN,JFK,15,497.77
-ICN,KUL,15,796.48
-ICN,LAX,15,240.85
-ICN,LHR,8,769.54
-ICN,MAD,7,472.27
-ICN,MEX,7,355.45
-ICN,MUC,10,1031.03
-ICN,PEK,12,950.23
-ICN,PVG,12,252.13
-ICN,SFO,8,432.33
-ICN,SIN,6,853.22
-ICN,SYD,13,499.36
-IST,AMS,7,1320.32
-IST,ATL,10,1200.59
-IST,BKK,10,1097.93
-IST,CDG,14,848.68
-IST,CGK,11,1247.96
-IST,DEL,10,468.52
-IST,DXB,6,344.57
-IST,FCO,15,678.42
-IST,FRA,13,543.7
-IST,HKG,8,364.48
-IST,HND,12,1338.38
-IST,ICN,12,349.76
-IST,JFK,10,814.24
-IST,KUL,12,278.56
-IST,LAX,10,546.59
-IST,LHR,11,630.28
-IST,MAD,8,618.98
-IST,MEX,7,435.45
-IST,MUC,13,1183.06
-IST,PEK,8,664.7
-IST,PVG,12,439.84
-IST,SFO,8,421.33
-IST,SIN,13,226.07
-IST,SYD,7,1386.62
-JFK,AMS,15,638.97
-JFK,ATL,14,1072.28
-JFK,BKK,11,1152.18
-JFK,CDG,7,518.4
-JFK,CGK,13,743.4
-JFK,DEL,15,569.4
-JFK,DXB,9,1303.59
-JFK,FCO,7,1135.01
-JFK,FRA,6,258.65
-JFK,HKG,9,370.15
-JFK,HND,11,556.88
-JFK,ICN,12,298.4
-JFK,IST,10,600.38
-JFK,KUL,9,1020.92
-JFK,LAX,12,202.91
-JFK,LHR,12,422.15
-JFK,MAD,12,1253.66
-JFK,MEX,10,1124.52
-JFK,MUC,14,370.62
-JFK,PEK,11,218.87
-JFK,PVG,8,1122.06
-JFK,SFO,14,1469.13
-JFK,SIN,15,343.91
-JFK,SYD,15,227.34
-KUL,AMS,6,1191.7
-KUL,ATL,6,432.13
-KUL,BKK,11,963.06
-KUL,CDG,10,886.78
-KUL,CGK,7,611.86
-KUL,DEL,10,1217.92
-KUL,DXB,15,895.2
-KUL,FCO,9,241.19
-KUL,FRA,11,735.78
-KUL,HKG,12,762.21
-KUL,HND,8,581.78
-KUL,ICN,11,436.7
-KUL,IST,12,1043.46
-KUL,JFK,13,1289.97
-KUL,LAX,10,864.29
-KUL,LHR,11,1408.52
-KUL,MAD,15,455.7
-KUL,MEX,12,1190.51
-KUL,MUC,13,707.9
-KUL,PEK,12,591.67
-KUL,PVG,10,1406.35
-KUL,SFO,12,394.81
-KUL,SIN,7,825.21
-KUL,SYD,12,926.04
-LAX,AMS,8,317.5
-LAX,ATL,10,920.77
-LAX,BKK,11,230.99
-LAX,CDG,7,698.52
-LAX,CGK,10,432.72
-LAX,DEL,11,871.17
-LAX,DXB,7,1494.11
-LAX,FCO,12,636.0
-LAX,FRA,6,607.37
-LAX,HKG,13,1269.57
-LAX,HND,7,440.21
-LAX,ICN,15,886.23
-LAX,IST,8,1222.14
-LAX,JFK,7,745.63
-LAX,KUL,11,774.8
-LAX,LHR,6,965.04
-LAX,MAD,14,895.19
-LAX,MEX,14,1293.98
-LAX,MUC,14,463.82
-LAX,PEK,12,875.76
-LAX,PVG,15,1344.99
-LAX,SFO,6,763.23
-LAX,SIN,6,1373.56
-LAX,SYD,11,1159.63
-LHR,AMS,8,863.65
-LHR,ATL,10,1410.49
-LHR,BKK,15,1292.78
-LHR,CDG,14,976.96
-LHR,CGK,8,656.29
-LHR,DEL,12,1069.97
-LHR,DXB,13,506.77
-LHR,FCO,8,780.09
-LHR,FRA,12,1143.53
-LHR,HKG,10,232.51
-LHR,HND,10,439.77
-LHR,ICN,6,1418.91
-LHR,IST,12,662.62
-LHR,JFK,6,1400.42
-LHR,KUL,11,795.89
-LHR,LAX,12,405.3
-LHR,MAD,9,1157.66
-LHR,MEX,12,764.76
-LHR,MUC,9,1165.51
-LHR,PEK,10,355.67
-LHR,PVG,9,493.96
-LHR,SFO,12,1314.27
-LHR,SIN,9,380.79
-LHR,SYD,14,490.19
-MAD,AMS,15,918.53
-MAD,ATL,8,692.63
-MAD,BKK,11,1485.35
-MAD,CDG,10,342.44
-MAD,CGK,12,1080.91
-MAD,DEL,10,459.04
-MAD,DXB,9,1454.49
-MAD,FCO,8,566.16
-MAD,FRA,12,981.01
-MAD,HKG,12,1435.64
-MAD,HND,14,434.03
-MAD,ICN,9,945.7
-MAD,IST,14,605.96
-MAD,JFK,12,1061.43
-MAD,KUL,11,955.04
-MAD,LAX,15,587.96
-MAD,LHR,12,295.38
-MAD,MEX,11,997.22
-MAD,MUC,7,502.43
-MAD,PEK,7,1001.29
-MAD,PVG,10,760.37
-MAD,SFO,11,431.69
-MAD,SIN,12,1335.72
-MAD,SYD,10,603.54
-MEX,AMS,15,902.78
-MEX,ATL,15,1471.96
-MEX,BKK,14,226.04
-MEX,CDG,14,988.8
-MEX,CGK,12,270.72
-MEX,DEL,13,260.13
-MEX,DXB,7,931.02
-MEX,FCO,9,1454.99
-MEX,FRA,12,684.1
-MEX,HKG,12,346.01
-MEX,HND,7,1199.48
-MEX,ICN,7,550.69
-MEX,IST,7,259.37
-MEX,JFK,7,706.64
-MEX,KUL,13,788.99
-MEX,LAX,15,1027.96
-MEX,LHR,7,1472.18
-MEX,MAD,9,655.71
-MEX,MUC,8,877.15
-MEX,PEK,6,771.11
-MEX,PVG,15,1262.25
-MEX,SFO,15,1426.49
-MEX,SIN,7,1136.49
-MEX,SYD,13,1203.24
-MUC,AMS,11,1248.51
-MUC,ATL,10,526.27
-MUC,BKK,7,442.55
-MUC,CDG,12,343.23
-MUC,CGK,8,693.5
-MUC,DEL,14,421.32
-MUC,DXB,13,1250.66
-MUC,FCO,8,1111.4
-MUC,FRA,8,1090.6
-MUC,HKG,14,822.03
-MUC,HND,7,622.78
-MUC,ICN,11,420.63
-MUC,IST,9,1421.12
-MUC,JFK,13,328.18
-MUC,KUL,14,603.22
-MUC,LAX,14,528.14
-MUC,LHR,7,779.27
-MUC,MAD,13,638.53
-MUC,MEX,6,842.67
-MUC,PEK,9,303.87
-MUC,PVG,15,838.58
-MUC,SFO,12,396.55
-MUC,SIN,14,798.35
-MUC,SYD,9,1339.1
-PEK,AMS,15,1239.56
-PEK,ATL,10,713.34
-PEK,BKK,10,1497.89
-PEK,CDG,15,776.41
-PEK,CGK,13,641.79
-PEK,DEL,11,1463.14
-PEK,DXB,9,860.17
-PEK,FCO,6,1128.45
-PEK,FRA,13,628.53
-PEK,HKG,6,611.17
-PEK,HND,11,587.13
-PEK,ICN,10,554.34
-PEK,IST,9,1059.06
-PEK,JFK,9,1057.5
-PEK,KUL,9,667.35
-PEK,LAX,6,989.2
-PEK,LHR,14,254.46
-PEK,MAD,14,1418.46
-PEK,MEX,6,1362.31
-PEK,MUC,6,927.24
-PEK,PVG,11,557.94
-PEK,SFO,14,1471.15
-PEK,SIN,6,877.14
-PEK,SYD,8,1338.12
-PVG,AMS,8,296.41
-PVG,ATL,10,937.86
-PVG,BKK,10,1352.75
-PVG,CDG,13,360.68
-PVG,CGK,15,755.94
-PVG,DEL,9,572.95
-PVG,DXB,14,530.21
-PVG,FCO,9,531.93
-PVG,FRA,6,1066.51
-PVG,HKG,15,1309.63
-PVG,HND,9,1421.64
-PVG,ICN,8,208.87
-PVG,IST,11,904.14
-PVG,JFK,9,605.84
-PVG,KUL,8,1419.74
-PVG,LAX,6,937.59
-PVG,LHR,7,897.58
-PVG,MAD,8,774.93
-PVG,MEX,14,263.43
-PVG,MUC,8,858.0
-PVG,PEK,13,580.95
-PVG,SFO,6,1428.37
-PVG,SIN,10,1473.37
-PVG,SYD,6,689.95
-SFO,AMS,9,1332.21
-SFO,ATL,13,1071.04
-SFO,BKK,15,734.48
-SFO,CDG,13,1386.16
-SFO,CGK,11,639.67
-SFO,DEL,6,1411.37
-SFO,DXB,8,1269.11
-SFO,FCO,6,626.68
-SFO,FRA,7,1430.23
-SFO,HKG,15,644.89
-SFO,HND,6,546.83
-SFO,ICN,14,484.88
-SFO,IST,15,375.09
-SFO,JFK,14,383.68
-SFO,KUL,15,1065.92
-SFO,LAX,12,786.43
-SFO,LHR,14,821.28
-SFO,MAD,14,264.88
-SFO,MEX,13,1190.63
-SFO,MUC,9,1089.19
-SFO,PEK,15,350.82
-SFO,PVG,11,454.78
-SFO,SIN,9,997.3
-SFO,SYD,9,967.94
-SIN,AMS,14,932.29
-SIN,ATL,8,1240.3
-SIN,BKK,12,1292.35
-SIN,CDG,7,1409.01
-SIN,CGK,6,222.99
-SIN,DEL,14,1179.12
-SIN,DXB,13,531.25
-SIN,FCO,6,666.76
-SIN,FRA,10,871.37
-SIN,HKG,15,654.77
-SIN,HND,13,1190.14
-SIN,ICN,15,879.14
-SIN,IST,12,269.92
-SIN,JFK,6,735.24
-SIN,KUL,10,1333.44
-SIN,LAX,12,490.46
-SIN,LHR,11,222.99
-SIN,MAD,11,616.15
-SIN,MEX,11,1120.33
-SIN,MUC,11,1002.08
-SIN,PEK,10,747.15
-SIN,PVG,15,428.19
-SIN,SFO,11,660.97
-SIN,SYD,12,1207.73
-SYD,AMS,11,1069.09
-SYD,ATL,13,981.09
-SYD,BKK,7,1307.56
-SYD,CDG,15,1059.24
-SYD,CGK,14,1067.07
-SYD,DEL,8,398.31
-SYD,DXB,15,306.84
-SYD,FCO,14,1216.34
-SYD,FRA,10,881.28
-SYD,HKG,11,1398.69
-SYD,HND,8,1261.47
-SYD,ICN,6,943.19
-SYD,IST,10,307.18
-SYD,JFK,10,616.59
-SYD,KUL,11,1230.82
-SYD,LAX,8,516.26
-SYD,LHR,12,485.66
-SYD,MAD,13,360.5
-SYD,MEX,7,688.09
-SYD,MUC,7,369.96
-SYD,PEK,12,370.46
-SYD,PVG,12,900.09
-SYD,SFO,11,1436.35
-SYD,SIN,13,1178.35
+Amsterdam,Bangkok,13,631
+Amsterdam,Beijing,9,428
+Amsterdam,Singapore,10,795
+Amsterdam,Delhi,12,987
+Amsterdam,Dubai,11,799
+Amsterdam,Frankfurt,8,542
+Amsterdam,Hong Kong,12,760
+Amsterdam,Seoul,14,698
+Amsterdam,Istanbul,13,924
+Amsterdam,New York,8,817
+Amsterdam,Kuala Lumpur,9,760
+Amsterdam,London,13,897
+Amsterdam,Los Angeles,8,746
+Amsterdam,Madrid,9,717
+Amsterdam,Mexico City,14,473
+Amsterdam,Munich,10,365
+Amsterdam,Paris,10,442
+Amsterdam,Rome,12,855
+Amsterdam,San Francisco,10,824
+Amsterdam,Shanghai,10,867
+Amsterdam,Singapore,13,302
+Amsterdam,Jakarta,11,975
+Amsterdam,Sydney,8,576
+Amsterdam,Tokyo,9,851
+Bangkok,Amsterdam,14,339
+Bangkok,Beijing,10,343
+Bangkok,Singapore,12,893
+Bangkok,Delhi,8,467
+Bangkok,Dubai,9,773
+Bangkok,Frankfurt,14,462
+Bangkok,Hong Kong,12,872
+Bangkok,Seoul,12,844
+Bangkok,Istanbul,10,817
+Bangkok,New York,11,892
+Bangkok,Kuala Lumpur,10,967
+Bangkok,London,12,340
+Bangkok,Los Angeles,14,498
+Bangkok,Madrid,8,535
+Bangkok,Mexico City,9,962
+Bangkok,Munich,8,584
+Bangkok,Paris,14,743
+Bangkok,Rome,11,781
+Bangkok,San Francisco,12,686
+Bangkok,Shanghai,10,659
+Bangkok,Singapore,12,951
+Bangkok,Jakarta,12,996
+Bangkok,Sydney,10,422
+Bangkok,Tokyo,12,376
+Beijing,Amsterdam,13,631
+Beijing,Bangkok,9,523
+Beijing,Singapore,11,702
+Beijing,Delhi,12,714
+Beijing,Dubai,14,793
+Beijing,Frankfurt,14,633
+Beijing,Hong Kong,13,630
+Beijing,Seoul,10,926
+Beijing,Istanbul,11,897
+Beijing,New York,14,321
+Beijing,Kuala Lumpur,12,608
+Beijing,London,13,662
+Beijing,Los Angeles,11,891
+Beijing,Madrid,10,959
+Beijing,Mexico City,11,822
+Beijing,Munich,12,586
+Beijing,Paris,12,946
+Beijing,Rome,10,697
+Beijing,San Francisco,13,309
+Beijing,Shanghai,9,933
+Beijing,Singapore,12,738
+Beijing,Jakarta,8,941
+Beijing,Sydney,12,557
+Beijing,Tokyo,10,981
+Singapore,Amsterdam,13,613
+Singapore,Bangkok,10,344
+Singapore,Beijing,11,967
+Singapore,Delhi,11,918
+Singapore,Dubai,13,588
+Singapore,Frankfurt,8,873
+Singapore,Hong Kong,12,961
+Singapore,Seoul,8,734
+Singapore,Istanbul,10,659
+Singapore,New York,9,346
+Singapore,Kuala Lumpur,10,388
+Singapore,London,11,405
+Singapore,Los Angeles,8,649
+Singapore,Madrid,9,729
+Singapore,Mexico City,10,956
+Singapore,Munich,11,580
+Singapore,Paris,10,929
+Singapore,Rome,9,756
+Singapore,San Francisco,10,455
+Singapore,Shanghai,13,686
+Singapore,Jakarta,8,963
+Singapore,Sydney,14,542
+Singapore,Tokyo,10,380
+Delhi,Amsterdam,9,806
+Delhi,Bangkok,11,584
+Delhi,Beijing,12,757
+Delhi,Singapore,14,604
+Delhi,Dubai,9,401
+Delhi,Frankfurt,12,670
+Delhi,Hong Kong,8,735
+Delhi,Seoul,12,465
+Delhi,Istanbul,13,892
+Delhi,New York,9,728
+Delhi,Kuala Lumpur,10,542
+Delhi,London,11,602
+Delhi,Los Angeles,14,793
+Delhi,Madrid,14,380
+Delhi,Mexico City,8,706
+Delhi,Munich,9,831
+Delhi,Paris,14,376
+Delhi,Rome,10,623
+Delhi,San Francisco,10,622
+Delhi,Shanghai,14,956
+Delhi,Singapore,14,441
+Delhi,Jakarta,9,391
+Delhi,Sydney,14,300
+Delhi,Tokyo,11,917
+Dubai,Amsterdam,9,605
+Dubai,Bangkok,9,303
+Dubai,Beijing,12,323
+Dubai,Singapore,10,779
+Dubai,Delhi,12,672
+Dubai,Frankfurt,12,460
+Dubai,Hong Kong,8,638
+Dubai,Seoul,13,545
+Dubai,Istanbul,14,850
+Dubai,New York,8,878
+Dubai,Kuala Lumpur,13,875
+Dubai,London,14,964
+Dubai,Los Angeles,14,876
+Dubai,Madrid,13,628
+Dubai,Mexico City,8,927
+Dubai,Munich,11,656
+Dubai,Paris,13,455
+Dubai,Rome,10,376
+Dubai,San Francisco,10,579
+Dubai,Shanghai,13,394
+Dubai,Singapore,14,783
+Dubai,Jakarta,8,370
+Dubai,Sydney,8,657
+Dubai,Tokyo,14,337
+Frankfurt,Amsterdam,13,932
+Frankfurt,Bangkok,10,560
+Frankfurt,Beijing,14,610
+Frankfurt,Singapore,9,395
+Frankfurt,Delhi,14,878
+Frankfurt,Dubai,9,367
+Frankfurt,Hong Kong,11,947
+Frankfurt,Seoul,11,631
+Frankfurt,Istanbul,12,814
+Frankfurt,New York,10,745
+Frankfurt,Kuala Lumpur,10,467
+Frankfurt,London,10,881
+Frankfurt,Los Angeles,13,629
+Frankfurt,Madrid,12,473
+Frankfurt,Mexico City,11,381
+Frankfurt,Munich,13,499
+Frankfurt,Paris,14,325
+Frankfurt,Rome,11,701
+Frankfurt,San Francisco,8,840
+Frankfurt,Shanghai,10,519
+Frankfurt,Singapore,13,632
+Frankfurt,Jakarta,12,942
+Frankfurt,Sydney,14,855
+Frankfurt,Tokyo,10,313
+Hong Kong,Amsterdam,12,910
+Hong Kong,Bangkok,12,628
+Hong Kong,Beijing,14,378
+Hong Kong,Singapore,8,563
+Hong Kong,Delhi,9,701
+Hong Kong,Dubai,8,835
+Hong Kong,Frankfurt,14,633
+Hong Kong,Seoul,11,696
+Hong Kong,Istanbul,12,995
+Hong Kong,New York,9,863
+Hong Kong,Kuala Lumpur,9,961
+Hong Kong,London,8,836
+Hong Kong,Los Angeles,8,337
+Hong Kong,Madrid,11,824
+Hong Kong,Mexico City,13,520
+Hong Kong,Munich,9,415
+Hong Kong,Paris,11,890
+Hong Kong,Rome,9,801
+Hong Kong,San Francisco,10,860
+Hong Kong,Shanghai,12,320
+Hong Kong,Singapore,9,498
+Hong Kong,Jakarta,11,300
+Hong Kong,Sydney,10,914
+Hong Kong,Tokyo,11,696
+Seoul,Amsterdam,14,438
+Seoul,Bangkok,13,502
+Seoul,Beijing,12,724
+Seoul,Singapore,8,883
+Seoul,Delhi,13,962
+Seoul,Dubai,10,480
+Seoul,Frankfurt,10,654
+Seoul,Hong Kong,8,705
+Seoul,Istanbul,11,471
+Seoul,New York,11,640
+Seoul,Kuala Lumpur,13,703
+Seoul,London,11,655
+Seoul,Los Angeles,11,694
+Seoul,Madrid,14,726
+Seoul,Mexico City,14,459
+Seoul,Munich,8,728
+Seoul,Paris,13,739
+Seoul,Rome,9,795
+Seoul,San Francisco,12,979
+Seoul,Shanghai,10,303
+Seoul,Singapore,9,893
+Seoul,Jakarta,9,795
+Seoul,Sydney,12,862
+Seoul,Tokyo,14,918
+Istanbul,Amsterdam,11,848
+Istanbul,Bangkok,10,742
+Istanbul,Beijing,13,814
+Istanbul,Singapore,9,346
+Istanbul,Delhi,14,718
+Istanbul,Dubai,9,364
+Istanbul,Frankfurt,9,567
+Istanbul,Hong Kong,13,811
+Istanbul,Seoul,11,997
+Istanbul,New York,10,702
+Istanbul,Kuala Lumpur,12,401
+Istanbul,London,13,905
+Istanbul,Los Angeles,14,366
+Istanbul,Madrid,10,470
+Istanbul,Mexico City,9,748
+Istanbul,Munich,13,876
+Istanbul,Paris,8,432
+Istanbul,Rome,13,965
+Istanbul,San Francisco,9,555
+Istanbul,Shanghai,11,312
+Istanbul,Singapore,13,826
+Istanbul,Jakarta,9,302
+Istanbul,Sydney,14,661
+Istanbul,Tokyo,9,860
+New York,Amsterdam,10,955
+New York,Bangkok,12,600
+New York,Beijing,11,838
+New York,Singapore,13,869
+New York,Delhi,8,723
+New York,Dubai,12,998
+New York,Frankfurt,14,910
+New York,Hong Kong,9,660
+New York,Seoul,11,803
+New York,Istanbul,13,869
+New York,Kuala Lumpur,11,865
+New York,London,11,312
+New York,Los Angeles,11,919
+New York,Madrid,10,381
+New York,Mexico City,8,410
+New York,Munich,13,774
+New York,Paris,14,399
+New York,Rome,10,902
+New York,San Francisco,14,881
+New York,Shanghai,11,319
+New York,Singapore,9,461
+New York,Jakarta,14,388
+New York,Sydney,13,971
+New York,Tokyo,12,793
+Kuala Lumpur,Amsterdam,12,819
+Kuala Lumpur,Bangkok,12,897
+Kuala Lumpur,Beijing,12,336
+Kuala Lumpur,Singapore,13,908
+Kuala Lumpur,Delhi,9,812
+Kuala Lumpur,Dubai,14,531
+Kuala Lumpur,Frankfurt,11,521
+Kuala Lumpur,Hong Kong,12,589
+Kuala Lumpur,Seoul,9,346
+Kuala Lumpur,Istanbul,13,700
+Kuala Lumpur,New York,12,564
+Kuala Lumpur,London,10,600
+Kuala Lumpur,Los Angeles,14,768
+Kuala Lumpur,Madrid,9,586
+Kuala Lumpur,Mexico City,9,823
+Kuala Lumpur,Munich,12,763
+Kuala Lumpur,Paris,14,374
+Kuala Lumpur,Rome,8,345
+Kuala Lumpur,San Francisco,10,825
+Kuala Lumpur,Shanghai,14,794
+Kuala Lumpur,Singapore,9,844
+Kuala Lumpur,Jakarta,8,383
+Kuala Lumpur,Sydney,13,677
+Kuala Lumpur,Tokyo,12,908
+London,Amsterdam,13,710
+London,Bangkok,8,354
+London,Beijing,14,942
+London,Singapore,10,931
+London,Delhi,10,623
+London,Dubai,8,617
+London,Frankfurt,13,454
+London,Hong Kong,9,739
+London,Seoul,14,798
+London,Istanbul,12,530
+London,New York,10,671
+London,Kuala Lumpur,11,588
+London,Los Angeles,14,459
+London,Madrid,10,473
+London,Mexico City,8,502
+London,Munich,8,594
+London,Paris,13,988
+London,Rome,8,532
+London,San Francisco,9,982
+London,Shanghai,13,585
+London,Singapore,14,653
+London,Jakarta,13,408
+London,Sydney,8,979
+London,Tokyo,14,498
+Los Angeles,Amsterdam,10,392
+Los Angeles,Bangkok,12,395
+Los Angeles,Beijing,9,751
+Los Angeles,Singapore,13,808
+Los Angeles,Delhi,13,671
+Los Angeles,Dubai,10,857
+Los Angeles,Frankfurt,13,537
+Los Angeles,Hong Kong,14,691
+Los Angeles,Seoul,8,435
+Los Angeles,Istanbul,14,513
+Los Angeles,New York,10,854
+Los Angeles,Kuala Lumpur,9,721
+Los Angeles,London,10,726
+Los Angeles,Madrid,10,664
+Los Angeles,Mexico City,11,947
+Los Angeles,Munich,12,388
+Los Angeles,Paris,11,404
+Los Angeles,Rome,10,416
+Los Angeles,San Francisco,9,654
+Los Angeles,Shanghai,14,794
+Los Angeles,Singapore,13,576
+Los Angeles,Jakarta,13,645
+Los Angeles,Sydney,13,786
+Los Angeles,Tokyo,11,750
+Madrid,Amsterdam,8,624
+Madrid,Bangkok,13,760
+Madrid,Beijing,11,421
+Madrid,Singapore,8,933
+Madrid,Delhi,14,479
+Madrid,Dubai,8,688
+Madrid,Frankfurt,14,332
+Madrid,Hong Kong,10,757
+Madrid,Seoul,11,613
+Madrid,Istanbul,8,762
+Madrid,New York,8,799
+Madrid,Kuala Lumpur,12,782
+Madrid,London,9,885
+Madrid,Los Angeles,12,764
+Madrid,Mexico City,9,676
+Madrid,Munich,13,689
+Madrid,Paris,13,335
+Madrid,Rome,9,538
+Madrid,San Francisco,8,696
+Madrid,Shanghai,13,539
+Madrid,Singapore,8,410
+Madrid,Jakarta,13,608
+Madrid,Sydney,14,899
+Madrid,Tokyo,14,791
+Mexico City,Amsterdam,11,460
+Mexico City,Bangkok,9,913
+Mexico City,Beijing,9,357
+Mexico City,Singapore,8,346
+Mexico City,Delhi,9,852
+Mexico City,Dubai,14,319
+Mexico City,Frankfurt,10,933
+Mexico City,Hong Kong,12,476
+Mexico City,Seoul,9,989
+Mexico City,Istanbul,8,592
+Mexico City,New York,8,526
+Mexico City,Kuala Lumpur,9,540
+Mexico City,London,10,503
+Mexico City,Los Angeles,11,704
+Mexico City,Madrid,11,789
+Mexico City,Munich,13,416
+Mexico City,Paris,10,737
+Mexico City,Rome,13,422
+Mexico City,San Francisco,9,545
+Mexico City,Shanghai,13,568
+Mexico City,Singapore,10,854
+Mexico City,Jakarta,13,528
+Mexico City,Sydney,14,840
+Mexico City,Tokyo,13,405
+Munich,Amsterdam,14,936
+Munich,Bangkok,12,761
+Munich,Beijing,14,957
+Munich,Singapore,9,572
+Munich,Delhi,8,567
+Munich,Dubai,10,480
+Munich,Frankfurt,12,691
+Munich,Hong Kong,14,517
+Munich,Seoul,14,987
+Munich,Istanbul,8,908
+Munich,New York,14,702
+Munich,Kuala Lumpur,11,304
+Munich,London,8,506
+Munich,Los Angeles,11,716
+Munich,Madrid,10,987
+Munich,Mexico City,14,403
+Munich,Paris,10,859
+Munich,Rome,10,664
+Munich,San Francisco,11,505
+Munich,Shanghai,10,675
+Munich,Singapore,14,885
+Munich,Jakarta,9,810
+Munich,Sydney,10,441
+Munich,Tokyo,10,425
+Paris,Amsterdam,13,632
+Paris,Bangkok,14,945
+Paris,Beijing,8,314
+Paris,Singapore,8,380
+Paris,Delhi,14,504
+Paris,Dubai,11,312
+Paris,Frankfurt,8,489
+Paris,Hong Kong,11,503
+Paris,Seoul,12,999
+Paris,Istanbul,12,702
+Paris,New York,12,397
+Paris,Kuala Lumpur,11,389
+Paris,London,9,439
+Paris,Los Angeles,9,876
+Paris,Madrid,10,829
+Paris,Mexico City,14,514
+Paris,Munich,13,823
+Paris,Rome,10,499
+Paris,San Francisco,14,930
+Paris,Shanghai,8,935
+Paris,Singapore,13,773
+Paris,Jakarta,14,925
+Paris,Sydney,13,435
+Paris,Tokyo,11,966
+Rome,Amsterdam,14,368
+Rome,Bangkok,13,362
+Rome,Beijing,14,730
+Rome,Singapore,10,388
+Rome,Delhi,11,799
+Rome,Dubai,12,738
+Rome,Frankfurt,10,593
+Rome,Hong Kong,8,882
+Rome,Seoul,14,844
+Rome,Istanbul,12,896
+Rome,New York,11,779
+Rome,Kuala Lumpur,13,358
+Rome,London,12,669
+Rome,Los Angeles,13,885
+Rome,Madrid,12,325
+Rome,Mexico City,8,667
+Rome,Munich,11,449
+Rome,Paris,11,960
+Rome,San Francisco,8,452
+Rome,Shanghai,14,548
+Rome,Singapore,10,770
+Rome,Jakarta,8,695
+Rome,Sydney,8,477
+Rome,Tokyo,12,408
+San Francisco,Amsterdam,10,494
+San Francisco,Bangkok,14,367
+San Francisco,Beijing,9,643
+San Francisco,Singapore,10,665
+San Francisco,Delhi,14,813
+San Francisco,Dubai,10,900
+San Francisco,Frankfurt,14,745
+San Francisco,Hong Kong,13,804
+San Francisco,Seoul,14,986
+San Francisco,Istanbul,13,754
+San Francisco,New York,11,437
+San Francisco,Kuala Lumpur,14,356
+San Francisco,London,14,451
+San Francisco,Los Angeles,8,899
+San Francisco,Madrid,8,661
+San Francisco,Mexico City,13,359
+San Francisco,Munich,8,614
+San Francisco,Paris,14,347
+San Francisco,Rome,14,720
+San Francisco,Shanghai,13,913
+San Francisco,Singapore,8,747
+San Francisco,Jakarta,10,979
+San Francisco,Sydney,11,693
+San Francisco,Tokyo,10,467
+Shanghai,Amsterdam,8,725
+Shanghai,Bangkok,11,323
+Shanghai,Beijing,12,913
+Shanghai,Singapore,14,756
+Shanghai,Delhi,9,977
+Shanghai,Dubai,13,605
+Shanghai,Frankfurt,13,370
+Shanghai,Hong Kong,12,975
+Shanghai,Seoul,8,794
+Shanghai,Istanbul,10,453
+Shanghai,New York,11,414
+Shanghai,Kuala Lumpur,8,417
+Shanghai,London,9,543
+Shanghai,Los Angeles,12,971
+Shanghai,Madrid,10,362
+Shanghai,Mexico City,14,654
+Shanghai,Munich,9,857
+Shanghai,Paris,10,882
+Shanghai,Rome,14,435
+Shanghai,San Francisco,8,374
+Shanghai,Singapore,8,529
+Shanghai,Jakarta,8,522
+Shanghai,Sydney,8,676
+Shanghai,Tokyo,13,849
+Singapore,Amsterdam,11,836
+Singapore,Bangkok,10,335
+Singapore,Beijing,8,465
+Singapore,Delhi,14,673
+Singapore,Dubai,8,696
+Singapore,Frankfurt,9,895
+Singapore,Hong Kong,13,348
+Singapore,Seoul,11,305
+Singapore,Istanbul,13,986
+Singapore,New York,13,509
+Singapore,Kuala Lumpur,11,311
+Singapore,London,12,766
+Singapore,Los Angeles,9,654
+Singapore,Madrid,11,373
+Singapore,Mexico City,13,784
+Singapore,Munich,10,837
+Singapore,Paris,14,634
+Singapore,Rome,11,950
+Singapore,San Francisco,12,867
+Singapore,Shanghai,8,470
+Singapore,Jakarta,12,689
+Singapore,Sydney,9,847
+Singapore,Tokyo,14,885
+Jakarta,Amsterdam,13,470
+Jakarta,Bangkok,14,686
+Jakarta,Beijing,13,371
+Jakarta,Singapore,12,422
+Jakarta,Delhi,10,398
+Jakarta,Dubai,10,764
+Jakarta,Frankfurt,12,887
+Jakarta,Hong Kong,8,955
+Jakarta,Seoul,10,447
+Jakarta,Istanbul,12,381
+Jakarta,New York,9,781
+Jakarta,Kuala Lumpur,9,388
+Jakarta,London,8,476
+Jakarta,Los Angeles,8,804
+Jakarta,Madrid,12,318
+Jakarta,Mexico City,14,626
+Jakarta,Munich,9,529
+Jakarta,Paris,11,507
+Jakarta,Rome,8,720
+Jakarta,San Francisco,8,344
+Jakarta,Shanghai,11,611
+Jakarta,Singapore,8,932
+Jakarta,Sydney,13,823
+Jakarta,Tokyo,12,919
+Sydney,Amsterdam,13,921
+Sydney,Bangkok,14,621
+Sydney,Beijing,9,770
+Sydney,Singapore,14,994
+Sydney,Delhi,14,376
+Sydney,Dubai,10,542
+Sydney,Frankfurt,12,402
+Sydney,Hong Kong,9,464
+Sydney,Seoul,13,460
+Sydney,Istanbul,14,622
+Sydney,New York,10,856
+Sydney,Kuala Lumpur,13,308
+Sydney,London,8,775
+Sydney,Los Angeles,8,493
+Sydney,Madrid,11,966
+Sydney,Mexico City,13,854
+Sydney,Munich,11,449
+Sydney,Paris,14,914
+Sydney,Rome,14,592
+Sydney,San Francisco,8,875
+Sydney,Shanghai,14,400
+Sydney,Singapore,11,540
+Sydney,Jakarta,9,522
+Sydney,Tokyo,9,908
+Tokyo,Amsterdam,13,441
+Tokyo,Bangkok,9,417
+Tokyo,Beijing,9,799
+Tokyo,Singapore,9,438
+Tokyo,Delhi,8,345
+Tokyo,Dubai,11,623
+Tokyo,Frankfurt,8,747
+Tokyo,Hong Kong,10,684
+Tokyo,Seoul,10,758
+Tokyo,Istanbul,14,315
+Tokyo,New York,14,580
+Tokyo,Kuala Lumpur,12,996
+Tokyo,London,9,723
+Tokyo,Los Angeles,14,792
+Tokyo,Madrid,11,700
+Tokyo,Mexico City,11,554
+Tokyo,Munich,11,948
+Tokyo,Paris,10,584
+Tokyo,Rome,12,676
+Tokyo,San Francisco,10,343
+Tokyo,Shanghai,9,734
+Tokyo,Singapore,9,389
+Tokyo,Jakarta,8,698
+Tokyo,Sydney,10,561
