@@ -26,11 +26,10 @@ Armed with lost luggage claim tickets and a relentless determination, you must e
     read -t 5 -p 'Name for your ticket: ' -e -i `whoami` name
     player["name"]=$name
 
-    echo -e "\nWelcome ${player["name"]}.
-
-Your adventure begins now. Will you track down the ring, or will it be lost forever in the sea of unclaimed baggage?\n\n"
-
-    #read -p "Press enter to begin"
+    echo -e "\nWelcome ${player["name"]}."
+    echo -e "\nYour adventure begins now."
+    echo -e "\nWill you track down the ring, or will it be lost forever in the sea of unclaimed baggage?"
+    echo -e "\nYour search begins in ${player["city"]}\n"
 }
 
 function victory() {
@@ -47,27 +46,22 @@ Now, all that’s left is to return home, knowing that soon, you’ll be down on
 }
 
 function summary() {
-    echo -e "\n * \$${player["cost"]} spent on flights"
-    echo -e " * ${player["duration"]} hours spent travelling"
-    echo -e " * ${#visited[@]} Cities Visited:"
+    echo -e "\n * You spent \$${player["cost"]} on plane tickets"
+    echo -e " * You endured ${player["duration"]} hours of in-flight entertainment"
+    echo -e " * You visited ${#visited[@]} cities:"
     for key in "${!visited[@]}"; do
         echo "   -> ${visited[$key]}"
     done
 
-    echo -e "\n * Luggage Found:"
+    echo -e "\n * You found ${#found[@]} pieces of lost luggage:"
     for key in "${!found[@]}"; do
         echo "   -> ${found[$key]}"
     done
-
-    #read -p "Press enter to continue..."
 }
 
 function farewell() {
-
-echo -e "
-Some adventures are about the destination, but this one was about the journey.
-
-Thank you for playing...\n\n"
+    echo -e "\n\nSome adventures are about the destination, but this one was about the journey.\n"
+    echo -e "Thank you for playing..."
 }
 
 function init() {
@@ -108,7 +102,6 @@ function load_cities() {
         countries["${city}"]="${country}"
         description=$(echo "$description" | sed 's/^"\(.*\)"$/\1/')
         descriptions["${city}"]="${description}"
-        # echo "Loading: ${city}, ${country} - ${description}"
     done < "$csv_file"
 }
 
@@ -121,7 +114,6 @@ function load_luggage() {
         luggage+=("${item}")
         description=$(echo "$description" | sed 's/^"\(.*\)"$/\1/')
         descriptions+=("${description}")
-        # echo "Loading Luggage: ${item} - ${description}"
     done < "$csv_file"
 }
 
@@ -158,7 +150,7 @@ function travel() {
 
     while IFS=, read -r origin destination duration cost
     do
-        # Skip Header
+        # Find flights from the current city
         if [ "$origin" == "${city}" ]; then
             flight_data+=("$origin,$destination,$duration,$cost")
             flights+=("${destination}")
@@ -167,22 +159,17 @@ function travel() {
         fi
     done < "$csv_file"
 
+    echo -e "\n\nWhere would you like to go next?"
+    echo -e "\nAvailable flights from ${city}:"
 
-
-#    echo -e "\nWhere would you like to go next?"
-#    echo -e "\nAvailable flights from ${city}:"
-#    shuffled_city_indexes=($(shuf -e "${!cities[@]}"))
-#    for index in $(shuf --input-range=0-$(( ${#cities[*]} - 1 )) -n ${N}); do
-#        flights+=("${cities[$index]}")
-#        costs+=("100")
-#        durations+=("5")
-#    done
-
-    for i in "${!flights[@]}"; do
+    # Limit the number of flights available
+    # This will randomise each time
+    shuffled_flight_indexes=($(shuf -e "${!cities[@]}"))
+    for i in $(shuf --input-range=0-$(( ${#flights[*]} - 1 )) -n ${N}); do
         echo "$((i+1)). ${flights[$i]}. \$${costs[$i]}. ${durations[$i]}h"
     done
 
-    echo -n "Choose a city by number: "
+    echo -en "\nChoose a city by number: "
     read city_choice
     selection=$((city_choice-1))
     # Validate selection?
@@ -195,46 +182,49 @@ function travel() {
     player["city"]="${destination}"
 
     echo -e "\nBoarding flight from ${city} to ${destination}...\n"
-    #read -p "Press enter to continue..."
+}
+
+function describe_city() {
+    city="$1"
+    echo -e "\n\nYou are in $city, ${countries[${city}]}!"
+    echo -e "\n${descriptions[${city}]}\n"
 }
 
 function play() {
     while [ "${player["found_ring"]}" == false ]; do
         city="${player["city"]}"
 
-        #clear
-        # echo -e "${city_descriptions[$city]}\n"
-        echo -e "Welcome to $city, ${countries[${city}]}!"
-
-        echo -e "\n${descriptions[${city}]}\n"
-
         # Auto-search
         # search "${city}"
 
         echo -e "Choose an action:"
-        echo -e "  1. Search for lost luggage"
-        echo -e "  2. Travel to another city"
-        echo -e "  3. View your progress"
-        echo -e "  q. Abandon your quest"
+        echo -e "  1. Describe ${city}"
+        echo -e "  2. Search for lost luggage"
+        echo -e "  3. Travel to another city"
+        echo -e "  4. View your progress"
+        echo -e "  5. Abandon your quest"
 
-        echo -n "What will you do? (1, 2, 3, or q): "
+        echo -n "What will you do? (1, 2, 3, 4, or Q): "
         read action
 
         case $action in
-            1)  # Search for luggage
+            1)  # Describe this city
+                describe_city "$city"
+                ;;
+            2)  # Search for luggage
                 search "$city"
                 ;;
-            2)  # Travel to another city
+            3)  # Travel to another city
                 travel "$city"
                 ;;
-            3)  # View your progress
+            4)  # View your progress
                 summary
                 ;;
-            Q | q)  # Abandon the quest
+            5 | Q | q)  # Abandon the quest
                 player["quit"]=true
                 ;;
             *)
-                echo -e "\nInvalid choice, please choose 1, 2, 3, or q."
+                echo -e "\nInvalid choice\n"
                 ;;
         esac
 
