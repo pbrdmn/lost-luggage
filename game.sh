@@ -1,11 +1,12 @@
 #!/bin/bash
 
-luggage=("Ring" "Watch" "Travel Guide" "Travel Pillow" "Toothbrush" "Sunscreen" "Headphones" "Power Bank" "Hat" "Laptop")
+# luggage=("Ring" "Watch" "Travel Guide" "Travel Pillow" "Toothbrush" "Sunscreen" "Headphones" "Power Bank" "Hat" "Laptop")
 
 declare -A lost_luggage
 declare -A player
 declare -a visited=()
 declare -a found=()
+declare -a luggage=()
 declare -a cities=()
 declare -A countries=()
 declare -A descriptions=()
@@ -82,6 +83,9 @@ function init() {
     player["city"]="${cities[0]}"
     visited+=("${cities[0]}")
 
+    # Load luggage from data file
+    load_luggage
+
     # Randomise the location of each piece of lost luggage
     shuffled_city_indexes=($(shuf -e "${!cities[@]}"))
     luggage_index=${#luggage[@]}
@@ -95,15 +99,29 @@ function init() {
 }
 
 function load_cities() {
-    # Load flights from data/cities.csv
+    # Load cities from data/cities.csv
     csv_file="data/cities.csv"
 
     while IFS="," read -r city country description
     do
         cities+=("${city}")
         countries["${city}"]="${country}"
+        description=$(echo "$description" | sed 's/^"\(.*\)"$/\1/')
         descriptions["${city}"]="${description}"
-        echo "Loading: ${city}, ${country} - ${description}"
+        # echo "Loading: ${city}, ${country} - ${description}"
+    done < "$csv_file"
+}
+
+function load_luggage() {
+    # Load lost luggage from data/luggage.csv
+    csv_file="data/luggage.csv"
+
+    while IFS="," read -r item description
+    do
+        luggage+=("${item}")
+        description=$(echo "$description" | sed 's/^"\(.*\)"$/\1/')
+        descriptions+=("${description}")
+        # echo "Loading Luggage: ${item} - ${description}"
     done < "$csv_file"
 }
 
@@ -111,17 +129,19 @@ function search() {
     city="$1"
     echo -e "\nYou search for lost luggage in $city... "
     if [[ -v lost_luggage["$city"] ]]; then
-        echo -e "And you found your ${lost_luggage[$city]}!\n"
-        found+=("${lost_luggage["${city}"]}")
-
-        if [[ "${lost_luggage["${city}"]}" == "Ring" ]]; then
-            player["found_ring"]=true
-        fi
+        found_luggage="${lost_luggage[$city]}"
+        found+=("${found_luggage}")
 
         # The player has found the luggage, so remove it from lost_luggage
         unset lost_luggage["$city"]
+
+        echo -e " ... and you found your ${found_luggage}!\n"
+
+        if [[ "${found_luggage}" == "Ring" ]]; then
+            player["found_ring"]=true
+        fi
     else
-        echo -e "But you found nothing\n"
+        echo -e " ... but you found nothing\n"
     fi
 }
 
@@ -184,10 +204,12 @@ function play() {
 
         #clear
         # echo -e "${city_descriptions[$city]}\n"
-        echo -e "Welcome to $city!"
+        echo -e "Welcome to $city, ${countries[${city}]}!"
+
+        echo -e "\n${descriptions[${city}]}\n"
 
         # Auto-search
-        search "${city}"
+        # search "${city}"
 
         echo -e "Choose an action:"
         echo -e "  1. Search for lost luggage"
@@ -221,9 +243,6 @@ function play() {
             break
         fi
     done
-
-    echo -e "\nLuggage found: ${found[@]}"
-    echo -e "Cities visited: ${visited[@]}"
 }
 
 
