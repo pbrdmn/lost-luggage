@@ -18,3 +18,4 @@
 - [x] Prevent the player from finding the same piece of lost luggage twice
 - [x] End the game when the player collects the ring
 - [x] Display the player's total travel time and cost
+- [x] Allow the player to view their progress (found luggage, visited cities, cost, and duration)

@@ -20,14 +20,14 @@ But somewhere along the way—between connecting flights, airport chaos, and a r
 
 Armed with lost luggage claim tickets and a relentless determination, you must embark on a journey across multiple cities, following the trail of misplaced bags in hopes of recovering your precious ring. Along the way, you might recover your other lost luggage.\n\n"
 
-    read -t 5 -p 'Name for your ticket: ' -e -i 'Traveller' username || username="Traveller"
-    player["name"]=$username
+    read -t 5 -p 'Name for your ticket: ' -e -i `whoami` name
+    player["name"]=$name
 
     echo -e "\nWelcome ${player["name"]}.
 
 Your adventure begins now. Will you track down the ring, or will it be lost forever in the sea of unclaimed baggage?\n\n"
 
-    read -t 3 -p "Preparing your trip..."
+    read -p "Press enter to begin"
 }
 
 function victory() {
@@ -56,13 +56,15 @@ function summary() {
         echo "   -> ${found[$key]}"
     done
 
+    read -p "Press enter to continue..."
+}
+
+function farewell() {
 
 echo -e "
+Some adventures are about the destination, but this one was about the journey.
 
-Some journeys are about the destination, but this one was about the adventure.
-
-"
-    read -t 1 -p "Thank you for playing...\n\n"
+Thank you for playing...\n\n"
 }
 
 function init() {
@@ -108,7 +110,7 @@ function search() {
         echo -e "nothing found\n"
     fi
 
-    read -t 3 -p "Preparing your next trip..."
+    read -p "Press enter to continue"
 }
 
 function travel() {
@@ -142,8 +144,8 @@ function travel() {
     player["duration"]=$((player["duration"] + durations[$selection]))
     player["city"]="${destination}"
 
-    echo -e "\nTravelling to ${destination}..."
-    read -n 1 -s -r -p "Thank you for visiting ${city}."
+    echo -e "\nTravelling to ${destination}...\nThank you for visiting ${city}."
+    read -p "Press enter to continue..."
 }
 
 function play() {
@@ -159,9 +161,10 @@ function play() {
 You are on a quest to find the lost ring! Choose an action:
   1. Search for lost luggage
   2. Travel to another city
-  3. Abandon your quest"
+  3. View your progress
+  q. Abandon your quest"
 
-        echo -n "What will you do? (1, 2, or 3): "
+        echo -n "What will you do? (1, 2, 3, or q): "
         read action
 
         case $action in
@@ -171,11 +174,14 @@ You are on a quest to find the lost ring! Choose an action:
             2)  # Travel to another city
                 travel "$city"
                 ;;
-            3)  # Abandon the quest
+            3)  # View your progress
+                summary
+                ;;
+            Q | q)  # Abandon the quest
                 player["quit"]=true
                 ;;
             *)
-                echo -e "\nInvalid choice, please choose 1, 2, or 3."
+                echo -e "\nInvalid choice, please choose 1, 2, 3, or q."
                 ;;
         esac
 
@@ -197,3 +203,4 @@ if [ "${player["found_ring"]}" == true ]; then
     victory
 fi
 summary
+farewell
