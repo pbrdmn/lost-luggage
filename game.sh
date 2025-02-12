@@ -113,17 +113,22 @@ function search() {
 }
 
 function travel() {
+    N=5
+    flights=()
     echo -e "\nWhere would you like to go next?"
     shuffled_city_indexes=($(shuf -e "${!cities[@]}"))
-    available_cities=cities
+    for index in $(shuf --input-range=0-$(( ${#cities[*]} - 1 )) -n ${N}); do
+        flights+=("${cities[$index]}")
+    done
 
-    for i in "${!cities[@]}"; do
-        echo "$((i+1)). ${cities[$i]}"
+    for i in "${!flights[@]}"; do
+        echo "$((i+1)). ${flights[$i]}"
     done
 
     echo -n "Choose a city by number: "
     read city_choice
-    destination="${cities[$((city_choice-1))]}"
+    destination="${flights[$((city_choice-1))]}"
+
     visited+=("${destination}")
     player["city"]="${destination}"
     echo -e "\nTravelling to ${destination}..."
