@@ -20,15 +20,14 @@ But somewhere along the way—between connecting flights, airport chaos, and a r
 
 Armed with lost luggage claim tickets and a relentless determination, you must embark on a journey across multiple cities, following the trail of misplaced bags in hopes of recovering your precious ring. Along the way, you might recover your other lost luggage.\n\n"
 
-    echo -n "Enter your name: "
-    read player_name
-    player["name"]=$player_name
+    read -t 5 -p 'Name for your ticket: ' -e -i 'Traveller' username || username="Traveller"
+    player["name"]=$username
 
     echo -e "\nWelcome ${player["name"]}.
 
 Your adventure begins now. Will you track down the ring, or will it be lost forever in the sea of unclaimed baggage?\n\n"
 
-    read -p "Press enter to begin"
+    read -t 3 -p "Preparing your trip..."
 }
 
 function victory() {
@@ -62,10 +61,8 @@ echo -e "
 
 Some journeys are about the destination, but this one was about the adventure.
 
-Thank you for playing The Lost Luggage Adventure!
 "
-    read -p "Press enter to end"
-    clear
+    read -t 1 -p "Thank you for playing...\n\n"
 }
 
 function init() {
@@ -111,7 +108,7 @@ function search() {
         echo -e "nothing found\n"
     fi
 
-    read -n 1 -s -r -p "Press any key to continue"
+    read -t 3 -p "Preparing your next trip..."
 }
 
 function travel() {
@@ -146,7 +143,7 @@ function travel() {
     player["city"]="${destination}"
 
     echo -e "\nTravelling to ${destination}..."
-    read -n 1 -s -r -p "Press any key to continue"
+    read -n 1 -s -r -p "Thank you for visiting ${city}."
 }
 
 function play() {
