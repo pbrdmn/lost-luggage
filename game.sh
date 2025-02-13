@@ -128,13 +128,13 @@ function search() {
         # The player has found the luggage, so remove it from lost_luggage
         unset lost_luggage["$city"]
 
-        echo -e " ... and you found your ${found_luggage}!\n"
+        echo -e " ... and you found your \e[32m${found_luggage}\e[0m!\n"
 
         if [[ "${found_luggage}" == "Ring" ]]; then
             player["found_ring"]=true
         fi
     else
-        echo -e " ... but you found nothing\n"
+        echo -e " ... but you found \e[31mnothing\e[0m\n"
     fi
 }
 
