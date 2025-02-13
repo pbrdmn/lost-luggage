@@ -57,6 +57,7 @@ function summary() {
     for key in "${!found[@]}"; do
         echo "   -> ${found[$key]}"
     done
+    echo -e ""
 }
 
 function farewell() {
