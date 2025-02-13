@@ -38,4 +38,4 @@ You do not have any limits on either time or money.
 If your current city has a piece of lost luggage, you can search the city for the luggage.
 This will involve solving a maze of street names until you find the correct street.
 When you find the luggage, and lost items will be collected.
-When you collect the ring, the game is over.
+When you collect the ring, the game is over and a summary of your adventure will be displayed.
