@@ -95,7 +95,7 @@ function init() {
 
 function load_cities() {
     # Load cities from data/cities.csv
-    csv_file="data/cities.csv"
+    csv_file="`dirname "$0"`/data/cities.csv"
 
     while IFS="," read -r city country description
     do
@@ -108,7 +108,7 @@ function load_cities() {
 
 function load_luggage() {
     # Load lost luggage from data/luggage.csv
-    csv_file="data/luggage.csv"
+    csv_file="`dirname "$0"`/data/luggage.csv"
 
     while IFS="," read -r item description
     do
@@ -147,7 +147,7 @@ function travel() {
 
     # Load flights from data/flights.csv
     declare -a flight_data
-    csv_file="data/flights.csv"
+    csv_file="`dirname "$0"`/data/flights.csv"
 
     while IFS=, read -r origin destination duration cost
     do
