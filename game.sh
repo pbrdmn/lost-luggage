@@ -62,7 +62,7 @@ function score() {
     if [ ! -f "${scores_file}" ]; then
         echo -e "Player,Cities Visited,Items Found,Flights Cost,Flights Duration" > "${scores_file}"
     fi
-    echo -e "${player["name"]},${#visited[@]},${#found[@]},\$${player["cost"]},${player["duration"]}" >> ${scores_file}
+    echo -e "${player["name"]},${#visited[@]},${#found[@]},${player["cost"]},${player["duration"]}" >> ${scores_file}
 }
 
 function farewell() {
@@ -188,8 +188,8 @@ function travel() {
     destination="${departures[$selection]}"
     visited+=("${destination}")
 
-    player["cost"]=$((player["cost"] + costs[$selection]))
-    player["duration"]=$((player["duration"] + durations[$selection]))
+    player["cost"]=$((player["cost"] + costs[${departures[$selection]}]))
+    player["duration"]=$((player["duration"] + durations[${departures[$selection]}]))
     player["city"]="${destination}"
 
     echo -e "\nBoarding flight from 🛫 ${city} to 🛬 ${destination}...\n"
