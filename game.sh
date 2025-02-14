@@ -165,9 +165,14 @@ function travel() {
 
     # Limit the number of flights available
     # This will randomise each time
-    shuffled_flight_indexes=($(shuf -e "${!cities[@]}"))
+    departures=()
+    echo "shuffled_flights: "
     for i in $(shuf --input-range=0-$(( ${#flights[*]} - 1 )) -n ${N}); do
-        echo "$((i+1)). ${flights[$i]}. \$${costs[$i]}. ${durations[$i]}h"
+        #echo "$((i+1)). ${flights[$i]}. \$${costs[$i]}. ${durations[$i]}h"
+        departures+=("${flights[$i]}")
+    done
+    for i in "${!departures[@]}"; do
+        echo "$((i+1)) -> ${departures["${i}"]}"
     done
 
     echo -en "\nChoose a city by number: "
@@ -175,7 +180,7 @@ function travel() {
     selection=$((city_choice-1))
     # Validate selection?
 
-    destination="${flights[$selection]}"
+    destination="${departures[$selection]}"
     visited+=("${destination}")
 
     player["cost"]=$((player["cost"] + costs[$selection]))
