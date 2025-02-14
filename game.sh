@@ -61,7 +61,7 @@ function summary() {
 }
 
 function farewell() {
-    echo -e "\n\nSome adventures are about the destination, but this one was about the journey.\n"
+    echo -e "Some adventures are about the destination, but this one was about the journey.\n"
     echo -e "Thank you for playing..."
 }
 
@@ -142,8 +142,8 @@ function travel() {
     city="$1"
     N=5
     flights=()
-    costs=()
-    durations=()
+    declare -A costs=()
+    declare -A durations=()
 
     # Load flights from data/flights.csv
     declare -a flight_data
@@ -155,24 +155,22 @@ function travel() {
         if [ "$origin" == "${city}" ]; then
             flight_data+=("$origin,$destination,$duration,$cost")
             flights+=("${destination}")
-            costs+=("${cost}")
-            durations+=("${duration}")
+            costs+=(["${destination}"]="${cost}")
+            durations+=(["${destination}"]="${duration}")
         fi
     done < "$csv_file"
 
     echo -e "\n\nWhere would you like to go next?"
     echo -e "\nAvailable flights from ${city}:"
 
-    # Limit the number of flights available
+    # Shuffle and limit the number of flights available
     # This will randomise each time
     departures=()
-    echo "shuffled_flights: "
     for i in $(shuf --input-range=0-$(( ${#flights[*]} - 1 )) -n ${N}); do
-        #echo "$((i+1)). ${flights[$i]}. \$${costs[$i]}. ${durations[$i]}h"
         departures+=("${flights[$i]}")
     done
     for i in "${!departures[@]}"; do
-        echo "$((i+1)) -> ${departures["${i}"]}"
+        echo "  $((i+1)) ✈️  ${departures[$i]}. \$${costs[${departures[$i]}]}. ${durations[${departures[$i]}]}h."
     done
 
     echo -en "\nChoose a city by number: "
@@ -187,7 +185,7 @@ function travel() {
     player["duration"]=$((player["duration"] + durations[$selection]))
     player["city"]="${destination}"
 
-    echo -e "\nBoarding flight from ${city} to ${destination}...\n"
+    echo -e "\nBoarding flight from 🛫 ${city} to 🛬 ${destination}...\n"
 }
 
 function describe_city() {
