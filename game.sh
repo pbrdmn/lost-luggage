@@ -12,7 +12,6 @@ declare -A countries=()
 declare -A descriptions=()
 
 function intro() {
-    #clear
     echo -e "Welcome to the Lost Luggage Adventure Game!
 
 You had everything planned perfectly.
@@ -23,7 +22,7 @@ But somewhere along the way—between connecting flights, airport chaos, and a r
 
 Armed with lost luggage claim tickets and a relentless determination, you must embark on a journey across multiple cities, following the trail of misplaced bags in hopes of recovering your precious ring. Along the way, you might recover your other lost luggage.\n\n"
 
-    read -t 5 -p 'Name for your ticket: ' -e -i `whoami` name
+    read -p 'Name for your ticket: ' -e -i `whoami` name
     player["name"]=$name
 
     echo -e "\nWelcome ${player["name"]}."
@@ -33,8 +32,6 @@ Armed with lost luggage claim tickets and a relentless determination, you must e
 }
 
 function victory() {
-    #clear
-
     echo -e "After a whirlwind journey across multiple cities, following cryptic baggage claim tickets and chasing down lost luggage, you finally unzip a suitcase and there it is—your precious ring, gleaming under the dim airport storage lights.
 
 Relief washes over you. The long flights, the confusing city streets, the countless misplaced suitcases—it was all worth it. The moment you’ve been working toward is finally within reach.
@@ -60,7 +57,17 @@ function summary() {
     echo -e ""
 }
 
+function score() {
+    scores_file="`dirname "$0"`/data/scores.csv"
+    if [ ! -f "${scores_file}" ]; then
+        echo -e "Player,Cities Visited,Items Found,Flights Cost,Flights Duration" > "${scores_file}"
+    fi
+    echo -e "${player["name"]},${#visited[@]},${#found[@]},\$${player["cost"]},${player["duration"]}" >> ${scores_file}
+}
+
 function farewell() {
+    summary
+    score
     echo -e "Some adventures are about the destination, but this one was about the journey.\n"
     echo -e "Thank you for playing..."
 }
@@ -95,7 +102,7 @@ function init() {
 
 function load_cities() {
     # Load cities from data/cities.csv
-    csv_file="`dirname "$0"`/data/cities.csv"
+    cities_file="`dirname "$0"`/data/cities.csv"
 
     while IFS="," read -r city country description
     do
@@ -103,19 +110,19 @@ function load_cities() {
         countries["${city}"]="${country}"
         description=$(echo "$description" | sed 's/^"\(.*\)"$/\1/')
         descriptions["${city}"]="${description}"
-    done < "$csv_file"
+    done < "$cities_file"
 }
 
 function load_luggage() {
     # Load lost luggage from data/luggage.csv
-    csv_file="`dirname "$0"`/data/luggage.csv"
+    luggage_file="`dirname "$0"`/data/luggage.csv"
 
     while IFS="," read -r item description
     do
         luggage+=("${item}")
         description=$(echo "$description" | sed 's/^"\(.*\)"$/\1/')
         descriptions+=("${description}")
-    done < "$csv_file"
+    done < "$luggage_file"
 }
 
 function search() {
@@ -147,7 +154,7 @@ function travel() {
 
     # Load flights from data/flights.csv
     declare -a flight_data
-    csv_file="`dirname "$0"`/data/flights.csv"
+    flights_file="`dirname "$0"`/data/flights.csv"
 
     while IFS=, read -r origin destination duration cost
     do
@@ -158,7 +165,7 @@ function travel() {
             costs+=(["${destination}"]="${cost}")
             durations+=(["${destination}"]="${duration}")
         fi
-    done < "$csv_file"
+    done < "$flights_file"
 
     echo -e "\n\nWhere would you like to go next?"
     echo -e "\nAvailable flights from ${city}:"
@@ -246,5 +253,4 @@ play
 if [ "${player["found_ring"]}" == true ]; then
     victory
 fi
-summary
 farewell
