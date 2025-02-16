@@ -20,3 +20,5 @@
 - [x] Display the player's total travel time and cost
 - [x] Allow the player to view their progress (found luggage, visited cities, cost, and duration)
 - [ ] Prevent travelling from showing the same destination twice
+- [ ] Auto-display the city description
+- [ ] Type the city description one character at a time
