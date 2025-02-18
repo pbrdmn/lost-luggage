@@ -18,20 +18,10 @@ Examine the flight schedules, plan your route between cities, search the lost lu
 
 Each turn starts at an airport. In an airport you can:
 
-1. View the outbound flights
+1. Search the local city for a piece of lost luggage
 2. Book a ticket (and travel) to another city
-3. Search the local city for a piece of lost luggage
-
-### Viewing flights
-
-You can view outbound flights from your current city.
-You can also view connecting flights by changing the departing city on the departures board.
-
-### Book a ticket
-
-You can select a destination city from the available flights departing your current city.
-You will spend time and money on each flight your take.
-You do not have any limits on either time or money.
+3. See a summary of your game, including the cities you have visited and any lost luggage your have found
+4. (Q)uit the game
 
 ### Search for lost luggage
 
@@ -39,3 +29,11 @@ If your current city has a piece of lost luggage, you can search the city for th
 This will involve solving a maze of street names until you find the correct street.
 When you find the luggage, and lost items will be collected.
 When you collect the ring, the game is over and a summary of your adventure will be displayed.
+
+Initially, searching is a single event that will immediately find a piece of lost luggage, if there is one in the player's current city. Once found, the luggage is no longer lost and cannot be found again.
+
+### Travelling
+
+You can select a destination city from the available flights departing your current city.
+You will spend time and money on each flight your take.
+You do not have any limits on either time or money and can continue to travel and search for lost luggage until you find the lost ring, or abandon your quest.
