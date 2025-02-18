@@ -177,13 +177,20 @@ function travel() {
         departures+=("${flights[$i]}")
     done
     for i in "${!departures[@]}"; do
-        echo "  $((i+1)) ✈️  ${departures[$i]}. \$${costs[${departures[$i]}]}. ${durations[${departures[$i]}]}h."
+        echo "  $((i+1)). ✈️  ${departures[$i]}. \$${costs[${departures[$i]}]}. ${durations[${departures[$i]}]}h."
     done
+
+    echo "  Q. Cancel travel"
 
     echo -en "\nChoose a city by number: "
     read city_choice
     selection=$((city_choice-1))
     # Validate selection?
+
+    if [[ "${city_choice}" == "q" ]]; then
+        echo "\nTravel cancelled.\n"
+        return
+    fi
 
     destination="${departures[$selection]}"
     visited+=("${destination}")
