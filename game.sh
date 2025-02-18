@@ -44,8 +44,8 @@ Now, all that’s left is to return home, knowing that soon, you’ll be down on
 
 function summary() {
     echo -e "\n * You spent \$${player["cost"]} on plane tickets"
-    echo -e " * You endured ${player["duration"]} hours of in-flight entertainment"
-    echo -e " * You visited ${#visited[@]} cities:"
+    echo -e "\n * You endured ${player["duration"]} hours of in-flight entertainment"
+    echo -e "\n * You visited ${#visited[@]} cities:"
     for key in "${!visited[@]}"; do
         echo "   -> ${visited[$key]}"
     done
@@ -59,7 +59,7 @@ function summary() {
 
 function score() {
     # Don't save an empty score
-    if (( "${#visited[@]}" == 1 )); then
+    if (( "${#visited[@]}" == 1 )) && (( "${found[@]}" == 0 )); then
         return
     fi
 
