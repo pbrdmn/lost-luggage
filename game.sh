@@ -58,6 +58,11 @@ function summary() {
 }
 
 function score() {
+    # Don't save an empty score
+    if (( "${#visited[@]}" == 1 )); then
+        return
+    fi
+
     scores_file="`dirname "$0"`/data/scores.csv"
     if [ ! -f "${scores_file}" ]; then
         echo -e "Player,Cities Visited,Items Found,Flights Cost,Flights Duration" > "${scores_file}"
