@@ -187,16 +187,14 @@ function travel() {
 
     echo "  Q. Cancel travel"
 
-    echo -en "\nChoose a city by number: "
-    read city_choice
-    selection=$((city_choice-1))
-    # Validate selection?
+    read -rsn1 -p "Choose an option: " travel_option; echo
 
-    if [[ "${city_choice}" == "q" ]]; then
+    if [[ "${travel_option}" == "q" ]]; then
         echo "\nTravel cancelled.\n"
         return
     fi
 
+    selection=$((travel_option-1))
     destination="${departures[$selection]}"
     visited+=("${destination}")
 
@@ -229,8 +227,7 @@ function play() {
         echo -e "  3. View your progress"
         echo -e "  Q. Abandon your quest"
 
-        echo -n "What will you do? (1, 2, 3, or Q): "
-        read action
+        read -rsn1 -p "What will you do? " action; echo
 
         case $action in
 #            0)  # Describe this city
