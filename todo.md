@@ -3,12 +3,12 @@
 - [x] Determine what data needs to be stored about the game
 - [x] Determine what data needs to be stored about the player
 - [x] Determine what data needs to be stored about the cities 
-- [ ] Determine what data needs to be stored about the flights 
+- [x] Determine what data needs to be stored about the flights 
 - [x] Determine what data needs to be stored about the luggage 
 - [x] Determine what data needs to be stored about the items 
 - [x] Randomly place the lost items in the cities when the game begins
-- [ ] Build a system for generating flights between most / all cities
-- [ ] Allow the player to view flights between each city
+- [x] Build a system for generating flights between most / all cities
+- [x] Allow the player to view flights between each city
 - [x] Allow the player to book / travel on a flight
 - [x] Track the time and money spent on flights
 - [x] Track which city the player is in
@@ -20,5 +20,5 @@
 - [x] Display the player's total travel time and cost
 - [x] Allow the player to view their progress (found luggage, visited cities, cost, and duration)
 - [ ] Prevent travelling from showing the same destination twice
-- [ ] Auto-display the city description
+- [x] Auto-display the city description
 - [ ] Type the city description one character at a time

@@ -204,41 +204,43 @@ function travel() {
 
 function describe_city() {
     city="$1"
-    echo -e "\n\nYou are in $city, ${countries[${city}]}!"
+    echo -e "You are in $city, ${countries[${city}]}!"
     echo -e "\n${descriptions[${city}]}\n"
 }
 
 function play() {
     while [ "${player["found_ring"]}" == false ]; do
         city="${player["city"]}"
+        
+        # Describe the player's city
+        describe_city "${city}"
 
         # Auto-search
         # search "${city}"
 
         echo -e "Choose an action:"
-        echo -e "  1. Describe ${city}"
-        echo -e "  2. Search for lost luggage"
-        echo -e "  3. Travel to another city"
-        echo -e "  4. View your progress"
-        echo -e "  5. Abandon your quest"
+        echo -e "  1. Search for lost luggage"
+        echo -e "  2. Travel to another city"
+        echo -e "  3. View your progress"
+        echo -e "  Q. Abandon your quest"
 
-        echo -n "What will you do? (1, 2, 3, 4, or Q): "
+        echo -n "What will you do? (1, 2, 3, or Q): "
         read action
 
         case $action in
-            1)  # Describe this city
-                describe_city "$city"
-                ;;
-            2)  # Search for luggage
+#            0)  # Describe this city
+#                describe_city "$city"
+#                ;;
+            1)  # Search for luggage
                 search "$city"
                 ;;
-            3)  # Travel to another city
+            2)  # Travel to another city
                 travel "$city"
                 ;;
-            4)  # View your progress
+            3)  # View your progress
                 summary
                 ;;
-            5 | Q | q)  # Abandon the quest
+            Q | q)  # Abandon the quest
                 player["quit"]=true
                 ;;
             *)
