@@ -22,3 +22,4 @@
 - [ ] Prevent travelling from showing the same destination twice
 - [x] Auto-display the city description
 - [ ] Type the city description one character at a time
+- [ ] Update the UI to use [Dialog](https://invisible-island.net/dialog/dialog.html)
